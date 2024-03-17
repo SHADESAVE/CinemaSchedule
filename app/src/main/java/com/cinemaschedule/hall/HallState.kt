@@ -4,5 +4,8 @@ sealed interface HallState {
 
 	object Initial : HallState
 
-	object Content : HallState
+	data class Content(
+		val seatArrangement: List<List<Seat>>,
+		val seatArrangementColumns: Int,
+	) : HallState
 }
